@@ -21,6 +21,12 @@ if (( $+commands[brew] )) \
 fi
 unset curl_prefix
 
+if (( $+commands[brew] )) \
+      && [[ -d "${brew_prefix::="$(brew --prefix 2> /dev/null)"}" ]]; then
+  fpath=($brew_prefix/share/zsh/site-functions $fpath)
+fi
+unset brew_prefix
+
 #
 # Options
 #
