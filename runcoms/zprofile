@@ -6,14 +6,13 @@
 #
 
 #
-# Homebrew
+# Linux
 #
-if [[ -x /opt/homebrew/bin/brew ]] && [[ -O /opt/homebrew/bin/brew ]]; then
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-elif [[ -x /usr/homebrew/Homebrew/bin/brew ]] && [[ -O /usr/homebrew/Homebrew/bin/brew ]]; then
-  eval "$(/usr/homebrew/Homebrew/bin/brew shellenv)"
-elif [[ -x ~/.homebrew/bin/brew ]] && [[ -O ~/.homebrew/bin/brew ]]; then
-  eval "$(~/.homebrew/bin/brew shellenv)"
+if [[ "$OSTYPE" == linux-gnu ]]; then
+  # Arch linux default jdk
+  if [[ -h /usr/lib/jvm/default ]]; then
+    export JAVA_HOME=/usr/lib/jvm/default
+  fi
 fi
 
 #
@@ -22,6 +21,14 @@ fi
 
 if [[ "$OSTYPE" == darwin* ]]; then
   export BROWSER='open'
+  # Homebrew
+  if [[ -x /opt/homebrew/bin/brew ]] && [[ -O /opt/homebrew/bin/brew ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  elif [[ -x /usr/homebrew/Homebrew/bin/brew ]] && [[ -O /usr/homebrew/Homebrew/bin/brew ]]; then
+    eval "$(/usr/homebrew/Homebrew/bin/brew shellenv)"
+  elif [[ -x ~/.homebrew/bin/brew ]] && [[ -O ~/.homebrew/bin/brew ]]; then
+    eval "$(~/.homebrew/bin/brew shellenv)"
+  fi
 fi
 
 #
