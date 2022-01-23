@@ -16,3 +16,8 @@ fi
 autoload -Uz promptinit
 promptinit
 prompt pure
+
+## init nvs
+export NVS_HOME="$HOME/.nvs"
+[ -s "$NVS_HOME/nvs.sh" ] && . "$NVS_HOME/nvs.sh"
+[ -d "$HOME/.npm-global/bin" ] && export PATH=$HOME/.npm-global/bin:$PATH
