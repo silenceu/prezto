@@ -30,3 +30,7 @@ export NVM_DIR="$HOME/.nvm"
 
 ## init virtualenvwrapper
 [ -s "/opt/homebrew/bin/virtualenvwrapper.sh" ] && source /opt/homebrew/bin/virtualenvwrapper.sh
+
+# pnpm completion
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
