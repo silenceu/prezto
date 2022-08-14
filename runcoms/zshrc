@@ -12,6 +12,11 @@ fi
 
 # Customize to your needs...
 
+## Non-GitTracked
+if [ -s "${ZDOTDIR:-$HOME}/.zprezto/runcoms/customized_zshrc" ]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/customized_zshrc"
+fi
+
 ## init zsh pure theme
 autoload -Uz promptinit
 promptinit
