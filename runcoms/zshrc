@@ -12,11 +12,6 @@ fi
 
 # Customize to your needs...
 
-## Non-GitTracked
-if [ -s "${ZDOTDIR:-$HOME}/.zprezto/runcoms/customized_zshrc" ]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/customized_zshrc"
-fi
-
 ## init zsh pure theme
 autoload -Uz promptinit
 promptinit
@@ -38,9 +33,14 @@ export NVM_DIR="$HOME/.nvm"
 ## init virtualenvwrapper
 [ -s "/opt/homebrew/bin/virtualenvwrapper.sh" ] && source /opt/homebrew/bin/virtualenvwrapper.sh
 
+# Golang Verson Manager
+[ -s "${ZDOTDIR:-$HOME}/.gvm/scripts/gvm" ] && source ~/.gvm/scripts/gvm
+
 # pnpm completion
 # uninstall by removing these lines
-[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
+[[ -f "${ZDOTDIR:-$HOME}/.config/tabtab/zsh/__tabtab.zsh" ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
 
-# Golang Verson Manager
-[[ -s "~/.gvm/scripts/gvm" ]] && source "~/.gvm/scripts/gvm"
+## Non-GitTracked
+if [ -s "${ZDOTDIR:-$HOME}/.zprezto/runcoms/customized_zshrc" ]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/customized_zshrc"
+fi
