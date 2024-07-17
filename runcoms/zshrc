@@ -30,6 +30,10 @@ export NVM_DIR="$HOME/.nvm"
 
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # (Only for mac brew version) This loads nvm bash_completion
 
+## init docker path
+export DOCKER_HOME="$HOME/.docker/bin"
+[ -d "$DOCKER_HOME" ] && export PATH=$DOCKER_HOME:$PATH
+
 ## init virtualenvwrapper
 [ -s "/opt/homebrew/bin/virtualenvwrapper.sh" ] && source /opt/homebrew/bin/virtualenvwrapper.sh
 
