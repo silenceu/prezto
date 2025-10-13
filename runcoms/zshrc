@@ -30,6 +30,12 @@ export NVM_DIR="$HOME/.nvm"
 
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # (Only for mac brew version) This loads nvm bash_completion
 
+## init proto (mongorepo.dev)
+### It the alternative of nvs/nvm, but it can manage multiple languages
+export PROTO_HOME="$HOME/.proto"
+[ -d "$PROTO_HOME/bin" ] && export PATH="$PROTO_HOME/bin:$PATH"
+[ -d "$PROTO_HOME/shims" ] && export PATH="$PROTO_HOME/shims:$PATH"
+
 ## init docker path
 export DOCKER_HOME="$HOME/.docker/bin"
 [ -d "$DOCKER_HOME" ] && export PATH=$DOCKER_HOME:$PATH
